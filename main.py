@@ -44,6 +44,12 @@ if choice == "1":
     sum_xy = df['x*y'].sum()
     n = len(df)
 
+    print("∑x:", sum_x)
+    print("∑y:", sum_y)
+    print("∑x^2:", sum_x2)
+    print("∑xy:", sum_xy)
+    print("n:", n)
+
     # Print normal equations
     print("The normal equations are:")
     print(f"{sum_y} = a * {n} + b * {sum_x}")
@@ -73,6 +79,15 @@ elif choice == "2":
     sum_xy = df['x*y'].sum()
     sum_x2y = df['x^2*y'].sum()
     n = len(df)
+
+    print("∑x:", sum_x)
+    print("∑y:", sum_y)
+    print("∑x^2:", sum_x2)
+    print("∑x^3:", sum_x3)
+    print("∑x^4:", sum_x4)
+    print("∑xy:", sum_xy)
+    print("∑x^2y:", sum_x2y)
+    print("n:", n)
 
     # Print normal equations
     print("The normal equations are:")
