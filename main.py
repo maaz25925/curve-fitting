@@ -8,7 +8,7 @@ def solve_two(a1, b1, d1, a2, b2, d2):
     if D != 0:
         a = Dx / D
         b = Dy / D
-        return round(a, 4), round(b, 4)
+        return a, b
     else:
         raise ValueError("No unique solution exists.")
 
@@ -22,14 +22,14 @@ def solve_three(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3):
         a = Dx / D
         b = Dy / D
         c = Dz / D
-        return round(a, 4), round(b, 4), round(c, 4)
+        return a, b, c
     else:
         raise ValueError("No unique solution exists.")
 
 # Input data
-x = list(map(int, input("Enter X: ").split()))
-y = list(map(int, input("Enter Y: ").split()))
-choice = input("Enter 1 for straight line and 2 for parabola:")
+x = list(map(float, input("Enter X: ").split()))
+y = list(map(float, input("Enter Y: ").split()))
+choice = input("Enter 1 for straight line and 2 for parabola: ")
 
 if choice == "1":
     # For straight-line fitting
@@ -46,14 +46,14 @@ if choice == "1":
 
     # Print normal equations
     print("The normal equations are:")
-    print(f"{sum_y:.4f} = a * {n} + b * {sum_x:.4f}")
-    print(f"{sum_xy:.4f} = a * {sum_x:.4f} + b * {sum_x2:.4f}")
+    print(f"{sum_y} = a * {n} + b * {sum_x}")
+    print(f"{sum_xy} = a * {sum_x} + b * {sum_x2}")
 
     # Solve for coefficients a and b
     a, b = solve_two(n, sum_x, sum_y, sum_x, sum_x2, sum_xy)
-    print(f"a = ({a:.4f}), b = ({b:.4f})")
+    print(f"a = ({a}), b = ({b})")
     print("Thus, the equation of the straight line is: y = a + bx")
-    print(f"y = ({a:.4f}) + ({b:.4f})x")
+    print(f"y = ({a}) + ({b})x")
 
 elif choice == "2":
     # For parabolic fitting
@@ -76,15 +76,15 @@ elif choice == "2":
 
     # Print normal equations
     print("The normal equations are:")
-    print(f"{sum_y:.4f} = a * {n} + b * {sum_x:.4f} + c * {sum_x2:.4f}")
-    print(f"{sum_xy:.4f} = a * {sum_x:.4f} + b * {sum_x2:.4f} + c * {sum_x3:.4f}")
-    print(f"{sum_x2y:.4f} = a * {sum_x2:.4f} + b * {sum_x3:.4f} + c * {sum_x4:.4f}")
+    print(f"{sum_y} = a * {n} + b * {sum_x} + c * {sum_x2}")
+    print(f"{sum_xy} = a * {sum_x} + b * {sum_x2} + c * {sum_x3}")
+    print(f"{sum_x2y} = a * {sum_x2} + b * {sum_x3} + c * {sum_x4}")
 
     # Solve for coefficients a, b, and c
     a, b, c = solve_three(n, sum_x, sum_x2, sum_y, sum_x, sum_x2, sum_x3, sum_xy, sum_x2, sum_x3, sum_x4, sum_x2y)
-    print(f"a = ({a:.4f}), b = ({b:.4f}), c = ({c:.4f})")
+    print(f"a = ({a}), b = ({b}), c = ({c})")
     print("Thus, the equation of the parabola is: y = a + bx + cx^2")
-    print(f"y = ({a:.4f}) + ({b:.4f})x + ({c:.4f})x^2")
+    print(f"y = ({a}) + ({b})x + ({c})x^2")
 
 else:
     print("Select a valid choice.")
