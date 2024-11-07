@@ -52,7 +52,9 @@ if choice == "1":
 
     # Print normal equations
     print("The normal equations are:")
+    print("∑y = a * n + b * ∑x")
     print(f"{sum_y} = a * {n} + b * {sum_x}")
+    print("∑xy = a * ∑x + b * ∑x^2")
     print(f"{sum_xy} = a * {sum_x} + b * {sum_x2}")
 
     # Solve for coefficients a and b
@@ -91,8 +93,11 @@ elif choice == "2":
 
     # Print normal equations
     print("The normal equations are:")
+    print("∑y = a * n + b * ∑x + c * ∑x^2")
     print(f"{sum_y} = a * {n} + b * {sum_x} + c * {sum_x2}")
+    print("∑xy = a * ∑x + b * ∑x^2 + c * ∑x^3")
     print(f"{sum_xy} = a * {sum_x} + b * {sum_x2} + c * {sum_x3}")
+    print("∑x^2y = a * ∑x^2 + b * ∑x^3 + c * ∑x^4")
     print(f"{sum_x2y} = a * {sum_x2} + b * {sum_x3} + c * {sum_x4}")
 
     # Solve for coefficients a, b, and c
